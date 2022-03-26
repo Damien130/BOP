@@ -5,10 +5,12 @@
 //https://www.arduino.cc/reference/en/libraries/time/
 //https://www.pjrc.com/teensy/td_libs_TimeAlarms.html
 
-unsigned long c_time = 0;
-unsigned long last_c_time = 0;
+unsigned long c_time;
+unsigned long last_c_time;
 
-unsigned int score = 0;
+unsigned int roundTime;
+
+unsigned int score;
 
 enum devices {BUTTONS, STICK, SONIC};
 enum pitch {lPitch, mPitch, hPitch};
@@ -46,13 +48,20 @@ void setup() {
   pinMode(13, OUTPUT);
   
 //we actually may be able to use digital signals here (LOW -> V < 1.0v, HIGH -> V > 3.0v)
-  pinMode(A4, INPUT); //x
-  pinMode(A5, INPUT); //y
+//with 100k resistors in series with 10k pots, 2.26v is idle, 5 is right/up, 0 is left/down
+  //pinMode(A4, INPUT); //x
+  //pinMode(A5, INPUT); //y
+
+  pinMode(9, INPUT); //x
+  pinMode(10, INPUT); //y
 
   pinMode(A1, INPUT); //ultrasonic sensor
   
   randomSeed(analogRead(0)); //generate random seed from noise
 
+  c_time = 0;
+  last_c_time = 0;
+  roundTime  = 6000;
   score = 0;
 
   //initialize interactions
@@ -78,23 +87,24 @@ void setup() {
   //display current setup
   int displayColorPin = 3, interactionPin = 1, displayPin = 0;
   digitalWrite(displayPin, HIGH);
+  
   for(int i = 0; i < 3; i++){
     //play pitch i where deviceOrder = i
     for(int j = 0; j < 4; j++){
       numToMux(j, interactionPin); //select interaction
       muxByColor(buttons[j], (enum devices)i, displayColorPin);
     }
-    delay(1000); //wait for 1 s
+    delay(2000); //wait for 2 s
   }
   digitalWrite(displayPin, LOW);
 }
 
 void addToScore(){
-  c_time = millis();
   //check to see if addToScore() was called in the last 250 milliseconds
-  if (c_time - last_c_time > 250){
+  if (last_c_time < c_time){
     
-    //digitalWrite(ledPin, ledToggle);
+    score++;
+    //write score to hex
     last_c_time = c_time;
     }
 }
@@ -106,26 +116,44 @@ void loop() {
   //select a random color
   enum color curC = (enum color)random(4);
 
-  muxByDevice(curD, 7);
   muxByColor(curC, curD, 12);
- 
-  
-  //display to user
-      //display LED
-      //playSound
 
-      
-      //if buttons check pin 1
-      //find stickDir
-      //if ultrasonic,
+  //display configuration to user
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  //playSound
 
+  delay(2000);
+
+  //switch VCC to device
+  muxByDevice(curD, 7);
 
    //set up interupt dynamically
-   //attachInterrupt(digitalPinToInterrupt(pin), ISR, mode)
-   //attachInterrupt(signal, functioncall response, low/high mode)
-   //attachInterrupt(stickDir, score, low/high mode)
-   //wait(time)
-   //detachInterrupt(digitalPinToInterrupt(pin))
+   switch(curD){
+    case BUTTONS: attachInterrupt(digitalPinToInterrupt(1), addToScore, HIGH);
+    break;
+    case STICK:
+        if(curC == stickDirections[0]){ //up
+          attachInterrupt(digitalPinToInterrupt(10), addToScore, HIGH);
+        } else if(curC == stickDirections[1]){ //right
+          attachInterrupt(digitalPinToInterrupt(9), addToScore, HIGH);
+        } else if(curC == stickDirections[2]){ //down
+          attachInterrupt(digitalPinToInterrupt(10), addToScore, LOW);
+        } else if(curC == stickDirections[3]){ //left
+          attachInterrupt(digitalPinToInterrupt(9), addToScore, LOW);
+        }
+    break;
+    case SONIC: ;
+   }
+
+   c_time = millis();
+   delay(roundTime);
+   roundTime -= 50;
+   
+   //tear down interupt
+    detachInterrupt(digitalPinToInterrupt(1));
+    detachInterrupt(digitalPinToInterrupt(10));
+    detachInterrupt(digitalPinToInterrupt(9));
 }
 
 void shuffle(enum color* c, int sz){
