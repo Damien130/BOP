@@ -1,12 +1,9 @@
-//#include <Time.h>
-
 //Mason Dill
 //Using libraries time and time alarm
-//https://www.arduino.cc/reference/en/libraries/time/
-//https://www.pjrc.com/teensy/td_libs_TimeAlarms.html
 
 unsigned long c_time;
 unsigned long last_c_time;
+volatile byte state = LOW;
 
 unsigned int roundTime;
 
@@ -27,41 +24,32 @@ void muxByColor(enum color c, enum devices d, int pin);
 void muxByDevice(enum devices d, int pin);
 void numToMux(int num, int pin);
 
-void addToScore();
 void setdown();
 
 void setup() {
-  pinMode(0, OUTPUT); //display pin
+  interrupts();
   
-  pinMode(1, OUTPUT); //interaction pins
-  pinMode(2, OUTPUT);
+  pinMode(2, INPUT); //button interrupt
+  pinMode(3, INPUT); //joystick interrupt
+  
+  pinMode(10, INPUT); //analog stick intterupt
 
-  pinMode(3, OUTPUT); //display color pin
-  pinMode(4, OUTPUT);
-
-  pinMode(5, INPUT); //button interupt
-
-  pinMode(7, OUTPUT); //device select
+  attachInterrupt(digitalPinToInterrupt(2), addToScore, HIGH);
+  //attachInterrupt(digitalPinToInterrupt(3), addToScore, LOW);
+  interrupts();
+  pinMode(7, OUTPUT); //which color to display at round begin
   pinMode(8, OUTPUT);
 
   pinMode(12, OUTPUT); //color select
   pinMode(13, OUTPUT);
-  
-//we actually may be able to use digital signals here (LOW -> V < 1.0v, HIGH -> V > 3.0v)
-//with 100k resistors in series with 10k pots, 2.26v is idle, 5 is right/up, 0 is left/down
-  //pinMode(A4, INPUT); //x
-  //pinMode(A5, INPUT); //y
 
-  pinMode(9, INPUT); //x
-  pinMode(10, INPUT); //y
-
-  pinMode(A1, INPUT); //ultrasonic sensor
+  pinMode(11, OUTPUT); //notify success
   
   randomSeed(analogRead(0)); //generate random seed from noise
 
   c_time = 0;
-  last_c_time = 0;
-  roundTime  = 6000;
+  last_c_time = millis();
+  roundTime  = 4000;
   score = 0;
 
   //initialize interactions
@@ -73,7 +61,7 @@ void setup() {
       stickDirections[i] = (enum color)i;
       sonicZones[i] = (enum color)i;
   }
-  shuffle(buttons, 4);
+  //shuffle(buttons, 4);
   shuffle(stickDirections, 4);
   shuffle(sonicZones, 4);
 
@@ -85,7 +73,7 @@ void setup() {
   shuffle((enum color*)deviceOrder, 3);
 
   //display current setup
-  int displayColorPin = 3, interactionPin = 1, displayPin = 0;
+  /*int displayColorPin = 3, interactionPin = 1, displayPin = 0;
   digitalWrite(displayPin, HIGH);
   
   for(int i = 0; i < 3; i++){
@@ -97,63 +85,53 @@ void setup() {
     delay(2000); //wait for 2 s
   }
   digitalWrite(displayPin, LOW);
+  */
 }
 
 void addToScore(){
   //check to see if addToScore() was called in the last 250 milliseconds
   if (last_c_time < c_time){
-    
+    state = LOW;
+    digitalWrite(11, HIGH);
     score++;
     //write score to hex
-    last_c_time = c_time;
-    }
+    last_c_time = millis();
+   }
 }
 
 void loop() {
   //select a random device
   //enum devices curD = (enum devices)random(3);
   enum devices curD = BUTTONS; //for testing
-  //select a random color
-  enum color curC = (enum color)random(4);
+  //select a random color 
+  enum color curC = (enum color)random(0, 4);;
 
-  muxByColor(curC, curD, 12);
-
-  //display configuration to user
-  digitalWrite(7, LOW);
-  digitalWrite(8, LOW);
+  numToMux((int)curC, 7);//display color to user
+  muxByColor(curC, curD, 12); //mux button assigned to color
   //playSound
 
-  delay(2000);
-
-  //switch VCC to device
-  muxByDevice(curD, 7);
+  //delay(2000);
 
    //set up interupt dynamically
+   
    switch(curD){
-    case BUTTONS: attachInterrupt(digitalPinToInterrupt(1), addToScore, HIGH);
+    case BUTTONS: attachInterrupt(digitalPinToInterrupt(2), addToScore, HIGH);
     break;
-    case STICK:
-        if(curC == stickDirections[0]){ //up
-          attachInterrupt(digitalPinToInterrupt(10), addToScore, HIGH);
-        } else if(curC == stickDirections[1]){ //right
-          attachInterrupt(digitalPinToInterrupt(9), addToScore, HIGH);
-        } else if(curC == stickDirections[2]){ //down
-          attachInterrupt(digitalPinToInterrupt(10), addToScore, LOW);
-        } else if(curC == stickDirections[3]){ //left
-          attachInterrupt(digitalPinToInterrupt(9), addToScore, LOW);
-        }
+    case STICK: attachInterrupt(digitalPinToInterrupt(2), addToScore, HIGH);
     break;
     case SONIC: ;
    }
-
+   
    c_time = millis();
    delay(roundTime);
-   roundTime -= 50;
+   //roundTime -= 50;
    
    //tear down interupt
-    detachInterrupt(digitalPinToInterrupt(1));
-    detachInterrupt(digitalPinToInterrupt(10));
-    detachInterrupt(digitalPinToInterrupt(9));
+    detachInterrupt(digitalPinToInterrupt(2));
+    //detachInterrupt(digitalPinToInterrupt(10));
+    //detachInterrupt(digitalPinToInterrupt(9));
+    
+    digitalWrite(11, LOW);
 }
 
 void shuffle(enum color* c, int sz){
@@ -176,19 +154,19 @@ void numToMux(int num, int pin){
   switch(num){
     case 0: 
     digitalWrite(pin, LOW);
-    digitalWrite(pin, LOW);
+    digitalWrite(pin+1, LOW);
     break;
     case 1:
     digitalWrite(pin, HIGH);
-    digitalWrite(pin, LOW);
+    digitalWrite(pin+1, LOW);
     break;
     case 2:
     digitalWrite(pin, LOW);
-    digitalWrite(pin, HIGH);
+    digitalWrite(pin+1, HIGH);
     break;
     case 3:
     digitalWrite(pin, HIGH);
-    digitalWrite(pin, HIGH);
+    digitalWrite(pin+1, HIGH);
   }
 }
 
