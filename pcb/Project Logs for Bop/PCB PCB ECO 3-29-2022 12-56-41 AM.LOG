@@ -1,0 +1,57 @@
+Added Component: Designator=J?(61301821121)
+Add component (AddParameter): Name = "Contact Resistance"; Value = "20mOhm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet URL"; Value = "https://katalog.we-online.de/em/datasheet/6130xx21121.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Gender"; Value = "Male"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Wurth Elektronik"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer URL"; Value = "http://www.we-online.de"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "THT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature"; Value = "-40to105degC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Orientation"; Value = "Vertical"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Reference"; Value = "61301821121"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Bag"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "61301821121"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Number"; Value = "18"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch"; Value = "2.54mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "WurthElektronik"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rated Current"; Value = "3A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Row Number"; Value = "Dual"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Withstanding Voltage"; Value = "500VAC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Working Voltage"; Value = "250VAC"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=LED1A Pin=J?-16
+Added Net: Name=LED1A
+Added Pin To Net: NetName=LED1B Pin=J?-14
+Added Net: Name=LED1B
+Added Pin To Net: NetName=NetLabel175 Pin=J?-18
+Added Net: Name=NetLabel175
+Added Pin To Net: NetName=NetLabel178 Pin=J?-12
+Added Net: Name=NetLabel178
+Added Pin To Net: NetName=NetLabel179 Pin=J?-10
+Added Net: Name=NetLabel179
+Added Pin To Net: NetName=NetLabel180 Pin=J?-8
+Added Net: Name=NetLabel180
+Added Pin To Net: NetName=NetLabel181 Pin=J?-6
+Added Net: Name=NetLabel181
+Added Pin To Net: NetName=NetLabel182 Pin=J?-4
+Added Net: Name=NetLabel182
+Added Pin To Net: NetName=NetLabel183 Pin=J?-2
+Added Net: Name=NetLabel183
+Added Pin To Net: NetName=NetLabel184 Pin=J?-1
+Added Net: Name=NetLabel184
+Added Pin To Net: NetName=NetLabel185 Pin=J?-3
+Added Net: Name=NetLabel185
+Added Pin To Net: NetName=NetLabel186 Pin=J?-5
+Added Net: Name=NetLabel186
+Added Pin To Net: NetName=NetLabel187 Pin=J?-7
+Added Net: Name=NetLabel187
+Added Pin To Net: NetName=NetLabel188 Pin=J?-9
+Added Net: Name=NetLabel188
+Added Pin To Net: NetName=NetLabel189 Pin=J?-11
+Added Net: Name=NetLabel189
+Added Pin To Net: NetName=NetLabel190 Pin=J?-13
+Added Net: Name=NetLabel190
+Added Pin To Net: NetName=NetLabel191 Pin=J?-15
+Added Net: Name=NetLabel191
+Added Pin To Net: NetName=NetLabel192 Pin=J?-17
+Added Net: Name=NetLabel192
+Added Member To Class: ClassName=Schematic Member=Component C5 0.1uF
+Added Member To Class: ClassName=Schematic Member=Component J? 61301821121

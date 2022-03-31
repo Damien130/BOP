@@ -1,0 +1,48 @@
+Removed Pin From Net: NetName=GND Pin=D0-13
+Removed Pin From Net: NetName=GND Pin=D0-14
+Removed Pin From Net: NetName=LED1B Pin=J?-14
+Removed Pin From Net: NetName=LED1A Pin=J?-16
+Removed Member From Class: ClassName=Schematic Member=D0
+Change Component Designator: OldDesignator=J? NewDesignator=J6
+Added Pin To Net: NetName=LED1A Pin=J6-6
+Added Pin To Net: NetName=LED1B Pin=J6-8
+Added Pin To Net: NetName=GND Pin=J6-10
+Added Pin To Net: NetName=GND Pin=J6-12
+Added Pin To Net: NetName=LED1A Pin=R6-2
+Added Pin To Net: NetName=LED1B Pin=R7-2
+Added Pin To Net: NetName=LED1C Pin=J6-5
+Added Pin To Net: NetName=LED1C Pin=R8-2
+Added Net: Name=LED1C
+Added Pin To Net: NetName=LED1D Pin=J6-3
+Added Pin To Net: NetName=LED1D Pin=R9-2
+Added Net: Name=LED1D
+Added Pin To Net: NetName=LED1E Pin=J6-1
+Added Pin To Net: NetName=LED1E Pin=R10-2
+Added Net: Name=LED1E
+Added Pin To Net: NetName=LED1F Pin=J6-2
+Added Pin To Net: NetName=LED1F Pin=R11-2
+Added Net: Name=LED1F
+Added Pin To Net: NetName=LED1G Pin=J6-4
+Added Pin To Net: NetName=LED1G Pin=R12-2
+Added Net: Name=LED1G
+Added Pin To Net: NetName=LED2A Pin=J6-16
+Added Pin To Net: NetName=LED2A Pin=R13-2
+Added Net: Name=LED2A
+Added Pin To Net: NetName=LED2B Pin=J6-18
+Added Pin To Net: NetName=LED2B Pin=R14-2
+Added Net: Name=LED2B
+Added Pin To Net: NetName=LED2C Pin=J6-15
+Added Pin To Net: NetName=LED2C Pin=R15-2
+Added Net: Name=LED2C
+Added Pin To Net: NetName=LED2D Pin=J6-11
+Added Pin To Net: NetName=LED2D Pin=R16-2
+Added Net: Name=LED2D
+Added Pin To Net: NetName=LED2E Pin=J6-9
+Added Pin To Net: NetName=LED2E Pin=R17-2
+Added Net: Name=LED2E
+Added Pin To Net: NetName=LED2F Pin=J6-14
+Added Pin To Net: NetName=LED2F Pin=R18-2
+Added Net: Name=LED2F
+Added Pin To Net: NetName=LED2G Pin=J6-13
+Added Pin To Net: NetName=LED2G Pin=R19-2
+Added Net: Name=LED2G

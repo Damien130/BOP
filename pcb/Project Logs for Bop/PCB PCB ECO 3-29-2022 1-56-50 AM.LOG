@@ -1,0 +1,7 @@
+Added Member To Class: ClassName=Schematic Member=Component C5 0.1uF
+Added Member To Class: ClassName=Schematic Member=Component J6 61301821121
+Added Member To Class: ClassName=Schematic Member=Component R14 100 Ohm
+Added Member To Class: ClassName=Schematic Member=Component R20 CRCW12062K20FKEA
+Added Member To Class: ClassName=Schematic Member=Component R25 10k Ohm
+Added Rule: Name=Schematic Width Constraint
+Added Rule: Name=Schematic Width Constraint_1
