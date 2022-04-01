@@ -1,10 +1,11 @@
 ----------------------------------------------------------------------------------------------------------------------------------
-NCDrill File Report For: PCB.PcbDoc   4/1/2022  10:31:58 AM
+NCDrill File Report For: PCB.PcbDoc   4/1/2022  11:08:29 AM
 ----------------------------------------------------------------------------------------------------------------------------------
 
 Layer Pair : Top Copper to Bottom Copper
 ASCII RoundHoles File : PCB-RoundHoles.TXT
 ASCII SlotHoles File : PCB-SlotHoles.TXT
+EIA File   : PCB.DRL
 
 Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
 ----------------------------------------------------------------------------------------------------------------------------------
