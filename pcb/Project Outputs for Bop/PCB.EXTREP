@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------------------
-Gerber File Extension Report For: PCB.GBR   3/31/2022  7:58:39 PM
+Gerber File Extension Report For: PCB.GBR   4/1/2022  9:43:47 AM
 ------------------------------------------------------------------------------------------
 
 
@@ -28,8 +28,10 @@ Layer Extension     Layer Description
 .GM23               Bottom 3D Body                          
 .GM24               Bottom Component Center                 
 .GKO                Keep-Out Layer                          
-.3                  Dielectric 2                            
-.GML                Multi-Layer                             
 .2                  Core                                    
+.3                  Dielectric 2                            
 .1                  Dielectric 1                            
+.GML                Multi-Layer                             
+.GD1                Drill Drawing                           
+.GG1                Drill Guide                             
 ------------------------------------------------------------------------------------------
