@@ -1,7 +1,7 @@
 Board Information Report
-Filename     : G:\OneDrive - University of Pittsburgh\Junior Design\Bop-it\BOP\pcb\PCB.PcbDoc
-Date         : 3/31/2022
-Time         : 8:02:34 PM
+Filename     : C:\Users\damienhu\Documents\BOP\pcb\PCB.PcbDoc
+Date         : 4/1/2022
+Time         : 10:35:47 AM
 Time Elapsed : 00:00:00
 
 General
