@@ -1,0 +1,66 @@
+Protel Design System Design Rule Check
+PCB File : G:\OneDrive - University of Pittsburgh\Junior Design\Bop-it\BOP\pcb\PCB.PcbDoc
+Date     : 3/31/2022
+Time     : 7:53:29 PM
+
+Processing Rule : Clearance Constraint (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.254mm) (Max=0.508mm) (Preferred=0.508mm) (InNet('GND'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.254mm) (Max=0.254mm) (Preferred=0.254mm) (All)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.508mm) (Max=0.508mm) (Preferred=0.508mm) (InNet('NetJ2_A9'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.254mm) (Max=0.508mm) (Preferred=0.508mm) (InNet('+5'))
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.025mm) (Max=6.3mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.127mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=0.15mm) (IsPad),(All)
+   Violation between Silk To Solder Mask Clearance Constraint: (0.116mm < 0.15mm) Between Pad SW1-1.1(149.225mm,87.645mm) on Top Copper And Track (148.029mm,88.34mm)(148.676mm,88.34mm) on Top Overlay [Top Overlay] to [Top Mask] clearance [0.116mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.116mm < 0.15mm) Between Pad SW1-1.2(149.225mm,95.235mm) on Top Copper And Track (148.029mm,94.54mm)(148.676mm,94.54mm) on Top Overlay [Top Overlay] to [Top Mask] clearance [0.116mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.116mm < 0.15mm) Between Pad SW1-4.1(153.035mm,87.645mm) on Top Copper And Track (153.584mm,88.34mm)(154.231mm,88.34mm) on Top Overlay [Top Overlay] to [Top Mask] clearance [0.116mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.116mm < 0.15mm) Between Pad SW1-4.2(153.035mm,95.235mm) on Top Copper And Track (153.584mm,94.54mm)(154.231mm,94.54mm) on Top Overlay [Top Overlay] to [Top Mask] clearance [0.116mm]
+Rule Violations :4
+
+Processing Rule : Silk to Silk (Clearance=0.15mm) (All),(All)
+   Violation between Silk To Silk Clearance Constraint: (0.134mm < 0.15mm) Between Text "17" (118.443mm,122.787mm) on Top Overlay And Track (118.133mm,121.972mm)(118.133mm,127.202mm) on Top Overlay Silk Text to Silk Clearance [0.134mm]
+   Violation between Silk To Silk Clearance Constraint: (0.134mm < 0.15mm) Between Text "18" (118.443mm,125.487mm) on Top Overlay And Track (118.133mm,121.972mm)(118.133mm,127.202mm) on Top Overlay Silk Text to Silk Clearance [0.134mm]
+Rule Violations :2
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Room Schematic (Bounding Region = (91.567mm, 50.165mm, 178.181mm, 130.683mm) (InComponentClass('Schematic'))
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+
+Violations Detected : 6
+Waived Violations : 0
+Time Elapsed        : 00:00:01

@@ -1,0 +1,65 @@
+Removed Pin From Net: NetName=ECHO Pin=U7-3
+Added Component: Designator=C23(CAPC1608X90N)
+Add component (AddParameter): Name = "Digi-Key_Part_Number"; Value = "587-6004-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Digi-Key_Purchase_URL"; Value = "https://www.digikey.in/product-detail/en/taiyo-yuden/EMK107B7104KAHT/587-6004-1-ND/8040667?utm_source=snapeda&utm_medium=aggregator&utm_campaign=symbol"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Taiyo Yuden"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "EMK107B7104KAHT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "1608 Taiyo Yuden"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/EMK107B7104KAHT/Taiyo%20Yuden/view-part/588112/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=R37(RESC3116X60N)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "CRCW120610K0DHEAP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=RV?(BOUR-3290W)
+Add component (AddParameter): Name = "Datasheet URL"; Value = "http://www.bourns.com/docs/Product-Datasheets/3290.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Version"; Value = "04/2014"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Bourns"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer URL"; Value = "http://www.bourns.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "ThroughHole"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "No. of Turns"; Value = "25"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Description"; Value = "3-Pin Through Hole Device, Body 9.53 x 3.81 mm, Pitch 2.54 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Reference"; Value = "3290W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Potentiometer Mounting"; Value = "ThroughHole"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power Rating"; Value = "1W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Product Range"; Value = "AEC-Q2003290WSeries"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance Tolerance"; Value = "±5%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SVHC"; Value = "NoSVHC(15-Jun-2015)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Coefficient"; Value = "±50ppm/°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Track Resistance"; Value = "20kohm"; VariantName = "[No Variations]"
+Added Component: Designator=U12(SOIC127P630X170-14N)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "LM339MX"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=C23-1
+Added Pin To Net: NetName=+5 Pin=C23-2
+Added Pin To Net: NetName=+5 Pin=R37-2
+Added Pin To Net: NetName=+5 Pin=RV?-1
+Added Pin To Net: NetName=GND Pin=RV?-3
+Added Pin To Net: NetName=+5 Pin=U12-3
+Added Pin To Net: NetName=ECHO Pin=U12-5
+Added Pin To Net: NetName=DECHO Pin=U7-3
+Added Pin To Net: NetName=DECHO Pin=U12-2
+Added Net: Name=DECHO
+Added Pin To Net: NetName=NetR37_1 Pin=R37-1
+Added Pin To Net: NetName=NetR37_1 Pin=U12-7
+Added Pin To Net: NetName=NetR37_1 Pin=U12-9
+Added Pin To Net: NetName=NetR37_1 Pin=U12-11
+Added Pin To Net: NetName=NetR37_1 Pin=U12-12
+Added Net: Name=NetR37_1
+Added Pin To Net: NetName=NetRV?_2 Pin=RV?-2
+Added Pin To Net: NetName=NetRV?_2 Pin=U12-4
+Added Pin To Net: NetName=NetRV?_2 Pin=U12-6
+Added Pin To Net: NetName=NetRV?_2 Pin=U12-8
+Added Pin To Net: NetName=NetRV?_2 Pin=U12-10
+Added Net: Name=NetRV?_2
+Added Member To Class: ClassName=Schematic Member=Component C23 0.1uF
+Added Member To Class: ClassName=Schematic Member=Component R37 10k Ohm
+Added Member To Class: ClassName=Schematic Member=Component RV? 3290W-1-203
+Added Member To Class: ClassName=Schematic Member=Component U12 LM339MX

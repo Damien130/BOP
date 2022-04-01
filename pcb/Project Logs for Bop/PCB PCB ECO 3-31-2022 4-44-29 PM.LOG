@@ -1,0 +1,100 @@
+Removed Pin From Net: NetName=RESET Pin=J4-06
+Removed Pin From Net: NetName=PB3 Pin=U1-17
+Removed Pin From Net: NetName=PB4 Pin=U1-18
+Removed Pin From Net: NetName=PB5 Pin=U1-19
+Removed Pin From Net: NetName=RESET Pin=U2-2
+Removed Pin From Net: NetName=GND Pin=U7-3
+Removed Pin From Net: NetName=ECHO Pin=U7-4
+Removed Pin From Net: NetName=JOYSTICKOUT Pin=U7-5
+Removed Pin From Net: NetName=BUTTONOUT Pin=U7-6
+Removed Pin From Net: NetName=NetR30_1 Pin=U9-5
+Removed Pin From Net: NetName=NetR30_1 Pin=U9-9
+Added Component: Designator=LS1(CUI_CPT-1255C-090)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "CUI Devices"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "CPT-1255C-090"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/CPT-1255C-090/CUI%20Devices/view-part/2202985/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=R36(FP-CRCW1206-e3-MFG)
+Add component (AddParameter): Name = "Case Code (Imperial)"; Value = "1206"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case Code (Metric)"; Value = "3216"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case/Package"; Value = "1206"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Composition"; Value = "Thick Film"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Plating"; Value = "Tin"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Depth"; Value = "1.6mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.55mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Free"; Value = "Lead Free"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Length"; Value = "3.2mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "155°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Military Standard"; Value = "Not"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-55°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mount"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Pins"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Quantity"; Value = "5000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power Rating"; Value = "250mW"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Radiation Hardening"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance"; Value = "100R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Coefficient"; Value = "100ppm/°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Termination"; Value = "SMD/SMT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = "200V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating (DC)"; Value = "200V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Weight"; Value = "0.000353oz"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Width"; Value = "1.6mm"; VariantName = "[No Variations]"
+Added Component: Designator=SW1(SW_1571983-5)
+Add component (AddParameter): Name = "Configuration_Pole-Throw"; Value = "Single Pole - Single Throw"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact_Current_Rating"; Value = ".1 A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Digi-Key_Part_Number"; Value = "450-1762-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Digi-Key_Purchase_URL"; Value = "https://www.digikey.com/product-detail/en/te-connectivity-alcoswitch-switches/1571983-5/450-1762-1-ND/1207171?utm_source=snapeda&utm_medium=aggregator&utm_campaign=symbol"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "TE Connectivity"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "1571983-5"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "DIP-4 TE Connectivity"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/1571983-5/TE%20Connectivity%20ALCOSWITCH%20Switches/view-part/238185/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Switch_Type"; Value = "DIP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "TE_purchase_URL"; Value = "https://www.te.com/usa-en/product-1571983-5.html?te_bu=Cor&te_type=disp&te_campaign=seda_glo_cor-seda-global-disp-prtnr-fy19-seda-model-bom-cta_sma-317_1&elqCampaignId=32493"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage_Rating"; Value = "50 VDC"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=LS1-N
+Added Pin To Net: NetName=PB3 Pin=SW1-1.1
+Added Pin To Net: NetName=SCORE Pin=SW1-1.2
+Added Pin To Net: NetName=PB4 Pin=SW1-2.1
+Added Pin To Net: NetName=AMUXA Pin=SW1-2.2
+Added Pin To Net: NetName=PB5 Pin=SW1-3.1
+Added Pin To Net: NetName=AMUXB Pin=SW1-3.2
+Added Pin To Net: NetName=RESET Pin=SW1-4.2
+Added Pin To Net: NetName=INPUT Pin=U1-4
+Added Pin To Net: NetName=IMUXA Pin=U1-13
+Added Pin To Net: NetName=IMUXB Pin=U1-14
+Added Pin To Net: NetName=SCORE Pin=U1-17
+Added Pin To Net: NetName=AMUXA Pin=U1-18
+Added Pin To Net: NetName=AMUXB Pin=U1-19
+Added Pin To Net: NetName=ECHO Pin=U7-3
+Added Pin To Net: NetName=JOYSTICKOUT Pin=U7-4
+Added Pin To Net: NetName=BUTTONOUT Pin=U7-5
+Added Pin To Net: NetName=GND Pin=U7-6
+Added Pin To Net: NetName=RESET Pin=U9-5
+Added Pin To Net: NetName=INC Pin=U9-8
+Added Pin To Net: NetName=RESET Pin=U9-9
+Added Pin To Net: NetName=NetLS1_P Pin=LS1-P
+Added Pin To Net: NetName=NetLS1_P Pin=R36-2
+Added Net: Name=NetLS1_P
+Added Pin To Net: NetName=PC6 Pin=J4-06
+Added Pin To Net: NetName=PC6 Pin=SW1-4.1
+Added Net: Name=PC6
+Added Pin To Net: NetName=RST7 Pin=U2-2
+Added Pin To Net: NetName=RST7 Pin=U9-6
+Added Net: Name=RST7
+Added Pin To Net: NetName=SPKR Pin=R36-1
+Added Pin To Net: NetName=SPKR Pin=U1-16
+Added Net: Name=SPKR
+Added Member To Class: ClassName=Schematic Member=Component C5 0.1uF
+Added Member To Class: ClassName=Schematic Member=Component J6 61301821121
+Added Member To Class: ClassName=Schematic Member=Component LS1 CPT-1255C-090
+Added Member To Class: ClassName=Schematic Member=Component R14 100 Ohm
+Added Member To Class: ClassName=Schematic Member=Component R20 CRCW12062K20FKEA
+Added Member To Class: ClassName=Schematic Member=Component R25 10k Ohm
+Added Member To Class: ClassName=Schematic Member=Component R36 CRCW1206100RFKEA
+Added Member To Class: ClassName=Schematic Member=Component SW1 1571983-5
