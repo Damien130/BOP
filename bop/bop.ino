@@ -8,6 +8,7 @@ volatile byte state = HIGH;
 unsigned int roundTime;
 
 unsigned int score;
+bool gameOver;
 
 enum devices {BUTTONS, STICK, SONIC};
 enum pitch {lPitch, mPitch, hPitch};
@@ -32,7 +33,7 @@ void setup() {
   pinMode(13, OUTPUT); //AKA Master mux             PHYSICAL PIN 19
 
   pinMode(11, OUTPUT); //Notify BCD to increment    PHYSICAL PIN 17
-  pinMode(10, OUTPUT); //speaker sound signal
+  pinMode(10, OUTPUT); //speaker sound signal       PHYSICAL PIN 16
   
   //randomSeed(analogRead(0)); //generate random seed from noise
 
@@ -40,7 +41,7 @@ void setup() {
   last_c_time = millis();
   roundTime  = 4000;
   score = 0;
-
+  gameOver = false;
   //display current setup
   delay(5);
 }
@@ -53,9 +54,15 @@ void addToScore(){
     score++;
     last_c_time = millis();
    }
+   gameOver = false;
 }
 
 void loop() {
+  if(gameOver){
+    //Game will become stuck in this loop if addToScore is not called at the end of this function
+    return;
+  }
+  gameOver = true;
   //select a random device
   //enum devices curD = (enum devices)random(3);
   enum devices curD = BUTTONS; //for testing
@@ -65,13 +72,24 @@ void loop() {
 
   muxByColor(curC, 7);//display color to user, mux by interaction
   muxByDevice(curD, 12);//mux by device
-  //playSound
+  playSound(curD, 16);
    
    c_time = millis();
    delay(roundTime);
-   //roundTime -= 50;
-    
+  
+   roundTime -= 50;
     digitalWrite(11, HIGH);
+}
+
+void playSound(enum devices d, int pin){
+  switch(d){
+    case BUTTONS: analogWrite(pin, 100);
+      break;
+    case STICK: analogWrite(pin, 170);
+      break;
+    case SONIC: analogWrite(pin, 250);
+      break;
+  }
 }
 
 void muxByColor(enum color num, int pin){
