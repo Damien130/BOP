@@ -7,24 +7,23 @@ volatile byte state = HIGH;
 
 unsigned int roundTime;
 
-unsigned int score;
+unsigned int playerScore;
 bool gameOver;
 
 enum devices {BUTTONS, STICK, SONIC};
-enum pitch {lPitch, mPitch, hPitch};
 enum color {RED, GREEN, BLUE, YELLOW};
 
 //prototypes
-void shuffle(enum color* c, int sz);
 void muxByColor(enum color num, int pin);
 void muxByDevice(enum devices d, int pin);
+void score();
 
 void setdown();
 
 void setup() {
   interrupts();
   pinMode(2, INPUT); //intterupt pin                PHYSICAL PIN 4
-  attachInterrupt(digitalPinToInterrupt(2), addToScore, HIGH);
+  attachInterrupt(digitalPinToInterrupt(2), score, HIGH);
   
   pinMode(7, OUTPUT); //color mux                   PHYSICAL PIN 13
   pinMode(8, OUTPUT); //AKA secondary Mux           PHYSICAL PIN 14
@@ -40,32 +39,34 @@ void setup() {
   c_time = 0;
   last_c_time = millis();
   roundTime  = 4000;
-  score = 0;
+  playerScore = 0;
   gameOver = false;
-  //display current setup
-  delay(5);
 }
 
-void addToScore(){
+void score(){
   //check to see if addToScore() was called in the last 250 milliseconds
   if (last_c_time < c_time){
     state = LOW;
     digitalWrite(11, LOW); //this will increment the BCD; adds 1 to score display
-    score++;
+    playerScore++;
     last_c_time = millis();
    }
-   gameOver = false;
+   if(playerScore < 100)
+    gameOver = false;
 }
 
 void loop() {
   if(gameOver){
-    //Game will become stuck in this loop if addToScore is not called at the end of this function
+    //disconnect interrupt pin from all input devices
+    digitalWrite(12, LOW);
+    digitalWrite(13, LOW);
+    
+    //Game will become stuck in this loop if addToScore is not called at the end of this function 
     return;
   }
   gameOver = true;
   //select a random device
-  //enum devices curD = (enum devices)random(3);
-  enum devices curD = BUTTONS; //for testing
+  enum devices curD = (enum devices)random(3);
   
   //select a random color 
   enum color curC = (enum color)random(0, 4);;
@@ -76,9 +77,11 @@ void loop() {
    
    c_time = millis();
    delay(roundTime);
-  
-   roundTime -= 50;
-    digitalWrite(11, HIGH);
+
+   //minimum round time = 500 ms
+   if(roundTime > 500)
+      roundTime -= 50;
+   digitalWrite(11, HIGH);
 }
 
 void playSound(enum devices d, int pin){
@@ -123,25 +126,4 @@ void muxByDevice(enum devices d, int pin){
       digitalWrite(pin, HIGH);
       digitalWrite(pin+1, HIGH);
     }
-}
-
-/*
- * DEPRECATED
- * was used for device, color randomization
- * we have decided to leave this level of complexity out of our design
- */
-void shuffle(enum color* c, int sz){
-  enum color tc;
-
-  int swapDes;
-  int swapLoc;
-  //randomly swap elements 12 times
-  for(int i =0; i < 12; i++){
-      swapLoc =  random(sz);
-      swapDes = random(sz);
-      tc = c[swapLoc];
-
-      *(c+swapLoc) = c[swapDes];
-      *(c+swapDes) = tc;
-  }
 }
